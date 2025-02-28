@@ -35,12 +35,12 @@ public class Robot extends TimedRobot {
 
   public Robot() {
     var leftConfig = new SparkMaxConfig();
-        leftConfig.follow(m_leftDriveAV, true);
+        leftConfig.follow(m_leftDriveAV, false);
         m_leftDriveARslave.configure(leftConfig, ResetMode.kResetSafeParameters, PersistMode.kPersistParameters);
 
         var rightConfig = new SparkMaxConfig();
-        rightConfig.follow(m_rightDriveAV, true);
-        m_rightDriveARslave.configure(leftConfig, ResetMode.kResetSafeParameters, PersistMode.kPersistParameters);
+        rightConfig.follow(m_rightDriveAV, false);
+        m_rightDriveARslave.configure(rightConfig, ResetMode.kResetSafeParameters, PersistMode.kPersistParameters);
 
     SendableRegistry.addChild(m_robotDrive, m_leftDriveAV);
     SendableRegistry.addChild(m_robotDrive, m_rightDriveAV);
